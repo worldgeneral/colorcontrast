@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@types/tinycolor2':
+        specifier: ^1.4.6
+        version: 1.4.6
       '@types/wcag-contrast':
         specifier: ^3.0.3
         version: 3.0.3
@@ -17,6 +20,9 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
+      tinycolor2:
+        specifier: ^1.6.0
+        version: 1.6.0
       wcag-contrast:
         specifier: ^3.0.0
         version: 3.0.0
@@ -478,6 +484,9 @@ packages:
 
   '@types/react@18.3.5':
     resolution: {integrity: sha512-WeqMfGJLGuLCqHGYRGHxnKrXcTitc6L/nBUWfWPcTarG3t9PsquqUMuVeXZeca+mglY4Vo5GZjCi0A3Or2lnxA==}
+
+  '@types/tinycolor2@1.4.6':
+    resolution: {integrity: sha512-iEN8J0BoMnsWBqjVbWH/c0G0Hh7O21lpR2/+PrvAVgWdzL7eexIFm4JN/Wn10PTcmNdtS6U67r499mlWMXOxNw==}
 
   '@types/wcag-contrast@3.0.3':
     resolution: {integrity: sha512-oprevfwJSLfpQK4KaWsRKJuNoebV76+xhmbXiWJGy+FkS34LpCgCMNIwRXWTb8xmmSxUE2ycFOYE7uyRVRm3LA==}
@@ -1262,6 +1271,9 @@ packages:
   thenify@3.3.1:
     resolution: {integrity: sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==}
 
+  tinycolor2@1.6.0:
+    resolution: {integrity: sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==}
+
   to-fast-properties@2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
@@ -1737,6 +1749,8 @@ snapshots:
     dependencies:
       '@types/prop-types': 15.7.12
       csstype: 3.1.3
+
+  '@types/tinycolor2@1.4.6': {}
 
   '@types/wcag-contrast@3.0.3': {}
 
@@ -2540,6 +2554,8 @@ snapshots:
   thenify@3.3.1:
     dependencies:
       any-promise: 1.3.0
+
+  tinycolor2@1.6.0: {}
 
   to-fast-properties@2.0.0: {}
 

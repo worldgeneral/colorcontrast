@@ -1,4 +1,5 @@
 import { useState } from "react";
+import tinycolor from "tinycolor2";
 
 export default function ColorInput({
   setColors,
@@ -20,7 +21,9 @@ export default function ColorInput({
         name="submit"
         value={"submit"}
         onClick={() => {
-          setColors((preVal) => new Set(preVal.add(input)));
+          setColors(
+            (preVal) => new Set(preVal.add(tinycolor(input).toHexString()))
+          );
           setInput("");
         }}
       />
