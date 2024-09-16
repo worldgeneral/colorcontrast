@@ -17,7 +17,6 @@ export default function RatioSlider({
         step={0.01}
         onChange={(ev) => setMinRatio(parseInt(ev.target.value, 10))}
       />
-      ;
     </div>
   );
 }
