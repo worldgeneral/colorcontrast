@@ -13,17 +13,16 @@ export default function ColorContrast() {
   >([]);
 
   useEffect(() => {
-    setColors((preVal) => new Set(preVal.add("#000000")));
-    setColors((preVal) => new Set(preVal.add("#ffffff")));
-
     setComparedColors(contrastCalculator(Array.from(colors)));
   }, []);
 
   useEffect(() => {
     if (Array.from(colors).length > 1) {
-      setComparedColors(contrastCalculator(Array.from(colors)));
+      return setComparedColors(contrastCalculator(Array.from(colors)));
     }
+    setComparedColors(() => []);
   }, [colors]);
+
   return (
     <>
       <ColorInput setColors={setColors} />

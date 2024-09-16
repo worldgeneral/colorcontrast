@@ -13,8 +13,9 @@ export default function ColorBand({
         className="w-1/3 border-r border-black"
         onClick={() =>
           setColors((preVal) => {
-            preVal.delete(color);
-            return new Set(preVal);
+            const next = new Set(preVal);
+            next.delete(color);
+            return next;
           })
         }
       >
