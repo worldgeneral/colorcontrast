@@ -13,15 +13,17 @@ export default function ColorContrast() {
   >([]);
 
   useEffect(() => {
-    setComparedColors(contrastCalculator(Array.from(colors)));
+    setComparedColors(contrastCalculator(Array.from(colors), minRatio));
   }, []);
 
   useEffect(() => {
     if (Array.from(colors).length > 1) {
-      return setComparedColors(contrastCalculator(Array.from(colors)));
+      return setComparedColors(
+        contrastCalculator(Array.from(colors), minRatio)
+      );
     }
     setComparedColors(() => []);
-  }, [colors]);
+  }, [colors, minRatio]);
 
   return (
     <>
@@ -48,19 +50,20 @@ export default function ColorContrast() {
   );
 }
 
-export function contrastCalculator(colors: string[]) {
+export function contrastCalculator(colors: string[], ratioSlider: number) {
   const checkedColors: { color1: string; color2: string; contrast: number }[] =
     [];
 
   colors.forEach((color1) => {
     colors.forEach((color2) => {
-      if (color1 === color2) {
+      const contrast = hex(color1, color2);
+      if (color1 === color2 || contrast < ratioSlider) {
         return;
       }
       checkedColors.push({
         color1: color1,
         color2: color2,
-        contrast: hex(color1, color2),
+        contrast: contrast,
       });
     });
   });
