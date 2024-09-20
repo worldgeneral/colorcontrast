@@ -1,3 +1,4 @@
+import invert from "invert-color";
 import ContrastCard from "./contrast-card";
 
 type Props = {
@@ -10,7 +11,7 @@ export function ColorCard(props: Props) {
   return (
     <div
       style={{ backgroundColor: props.color1, borderColor: props.color1 }}
-      className=" w-72 flex flex-col m-1 rounded-lg border-4 overflow-hidden"
+      className=" w-72 flex flex-col m-1 rounded-lg border-4 overflow-hidden cursor-pointer"
       onClick={() => {
         navigator.clipboard.writeText(props.color1);
       }}
@@ -24,10 +25,14 @@ export function ColorCard(props: Props) {
             123Abc
           </p>
         </div>
-        <div className="m-2">
+        <div className="m-2 flex flex-col">
           <button
-            style={{ color: props.color2 }}
-            className=""
+            style={{
+              borderColor: invert(props.color2, true),
+              backgroundColor: props.color2,
+              color: invert(props.color2, true),
+            }}
+            className="border border-black rounded-lg p-0.5 w-20 text-center my-auto"
             onClick={() => {
               navigator.clipboard.writeText(props.color2);
             }}
