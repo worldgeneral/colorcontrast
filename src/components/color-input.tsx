@@ -13,7 +13,10 @@ export default function ColorInput({
     setInput("");
   };
   return (
-    <form onSubmit={(e) => handleFrom(e)}>
+    <form
+      className="bg-white p-2 border border-gray-400 rounded-full  shadow shadow-gray-500 max-w-1/4"
+      onSubmit={(e) => handleFrom(e)}
+    >
       <input
         value={input}
         onChange={(ev) => setInput(ev.target.value)}
@@ -22,6 +25,7 @@ export default function ColorInput({
         placeholder="hex/rgb"
       />
       <input
+        className="bg-blue-500 px-3 py-1 rounded-full border-2 border-blue-700"
         type="button"
         name="submit"
         value={"submit"}

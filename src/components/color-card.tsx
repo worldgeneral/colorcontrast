@@ -7,21 +7,21 @@ type Props = {
 export function ColorCard(props: Props) {
   return (
     <div
-      style={{ backgroundColor: props.color2 }}
-      className="w-60 h-40 border flex flex-col m-10"
+      style={{ backgroundColor: props.color1, borderColor: props.color1 }}
+      className="w-60 h-40  flex flex-col m-3 rounded-lg border-4 overflow-hidden	"
     >
-      <p style={{ color: props.color1 }} className={`text-sm `}>
+      <p style={{ color: props.color2 }} className="text-sm mx-auto">
         123Abc
       </p>
-      <p style={{ color: props.color1 }} className={`text-xl`}>
+      <p style={{ color: props.color2 }} className="text-xl mx-auto">
         123Abc
       </p>
-      <div className="flex h-1/3 ">
+      <div className="flex h-1/3 justify-center">
         <ContrastCardSmall contrast={props.contrast} />
         <ContrastCardLarge contrast={props.contrast} />
         <ContrastNonText contrast={props.contrast} />
       </div>
-      <div className="bg-gray-50 h-1/3 mt-auto">
+      <div className="bg-gray-50 h-1/3 mt-auto ">
         <div>Contrast:</div>
         <div>{props.contrast}</div>
       </div>
@@ -35,7 +35,7 @@ type ContrastProps = {
 export function ContrastCardSmall(props: ContrastProps) {
   if (props.contrast > 7) {
     return (
-      <div className="w-1/3 aspect-video bg-white">
+      <div className="w-1/3 aspect-video bg-white ">
         <div>Small</div>
         <span>AAA</span>
         <svg
