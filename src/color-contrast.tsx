@@ -13,6 +13,14 @@ export default function ColorContrast() {
   >([]);
 
   useEffect(() => {
+    setColors((preVal) => new Set(preVal.add("#001F3F")));
+    setColors((preVal) => new Set(preVal.add("#3A6D8C")));
+    setColors((preVal) => new Set(preVal.add("#6A9AB0")));
+    setColors((preVal) => new Set(preVal.add("#EAD8B1")));
+    setColors((preVal) => new Set(preVal.add("#295F98")));
+    setColors((preVal) => new Set(preVal.add("#CDC2A5")));
+    setColors((preVal) => new Set(preVal.add("#C7FFD8")));
+    setColors((preVal) => new Set(preVal.add("#0B2F9F")));
     setComparedColors(contrastCalculator(Array.from(colors), minRatio));
   }, []);
 
@@ -38,7 +46,7 @@ export default function ColorContrast() {
             ))}
           </div>
           <RatioSlider minRatio={minRatio} setMinRatio={setMinRatio} />
-          <div className="flex flex-wrap justify-center max-w-10/12">
+          <div className="flex flex-wrap justify-evenly ">
             {comparedColors
               ? comparedColors.map((color) => (
                   <ColorCard

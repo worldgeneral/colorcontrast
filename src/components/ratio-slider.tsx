@@ -9,7 +9,7 @@ export default function RatioSlider({
 }) {
   console.log(minRatio);
   return (
-    <div className="max-w-[66.66%] w-full mt-10 ">
+    <div className="max-w-[66.66%] w-full my-10 ">
       <div className="relative   mx-3 ">
         <button
           className="absolute w-10 h-10 bg-black left-[calc(100%/(21/3))] -ml-5 rounded-br-full rounded-t-full -rotate-[45deg] text-white text-center  -translate-y-2"
