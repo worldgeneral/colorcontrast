@@ -35,12 +35,6 @@ The app supports the following WCAG 2.1 contrast ratio requirements:
 - **Contrast Ratio**: 21:1
 - **Result**: Passes AA and AAA for both normal and large text.
 
-## Built With
-
-- **JavaScript**: Core logic for contrast calculation and WCAG compliance check.
-- **HTML/CSS**: User interface.
-- **Node.js** (if applicable): Backend for hosting or extending the app.
-
 ## License
 
 This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
