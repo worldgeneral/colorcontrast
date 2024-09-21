@@ -1,5 +1,6 @@
 import invert from "invert-color";
 import ContrastCard from "./contrast-card";
+import CopyPopUp from "./copy-pop-up";
 
 type Props = {
   color1: string;
@@ -11,11 +12,19 @@ export function ColorCard(props: Props) {
   return (
     <div
       style={{ backgroundColor: props.color1, borderColor: props.color1 }}
-      className=" w-72 flex flex-col m-1 rounded-lg border-4 overflow-hidden cursor-pointer"
+      className=" w-72 flex flex-col m-1 rounded-lg border-4 overflow-hidden cursor-pointer relative"
       onClick={() => {
         navigator.clipboard.writeText(props.color1);
       }}
     >
+      <CopyPopUp
+        text="Copied"
+        time={1000}
+        width={5}
+        height={2}
+        translate={"translate(120% , 1rem)"}
+      />
+
       <div className="flex justify-between">
         <div className="m-2">
           <p style={{ color: props.color2 }} className="text-sm font-semibold">
@@ -32,12 +41,13 @@ export function ColorCard(props: Props) {
               backgroundColor: props.color2,
               color: invert(props.color2, true),
             }}
-            className="border border-black rounded-lg p-0.5 w-20 text-center my-auto"
+            className="border border-black rounded-lg p-0.5 w-20 text-center my-auto relative z-20"
             onClick={() => {
               navigator.clipboard.writeText(props.color2);
             }}
           >
             {props.color2}
+            <CopyPopUp text="Copied" time={1000} />
           </button>
         </div>
       </div>

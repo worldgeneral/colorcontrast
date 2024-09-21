@@ -13,18 +13,6 @@ export default function ColorContrast() {
   >([]);
 
   useEffect(() => {
-    setColors((preVal) => new Set(preVal.add("#001F3F")));
-    setColors((preVal) => new Set(preVal.add("#3A6D8C")));
-    setColors((preVal) => new Set(preVal.add("#6A9AB0")));
-    setColors((preVal) => new Set(preVal.add("#EAD8B1")));
-    setColors((preVal) => new Set(preVal.add("#295F98")));
-    setColors((preVal) => new Set(preVal.add("#CDC2A5")));
-    setColors((preVal) => new Set(preVal.add("#C7FFD8")));
-    setColors((preVal) => new Set(preVal.add("#0B2F9F")));
-    setComparedColors(contrastCalculator(Array.from(colors), minRatio));
-  }, []);
-
-  useEffect(() => {
     if (Array.from(colors).length > 1) {
       return setComparedColors(
         contrastCalculator(Array.from(colors), minRatio)
