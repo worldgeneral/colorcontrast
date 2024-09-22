@@ -14,10 +14,7 @@ export default function ColorContrast() {
   >([]);
 
   useEffect(() => {
-    const colors = new URLSearchParams(window.location.search)
-      .get("colors")
-      ?.split("-");
-
+    const colors = new URLSearchParams(window.location.search).getAll("color");
     colors?.map((color) => {
       setColors(
         (preVal) =>
@@ -29,9 +26,8 @@ export default function ColorContrast() {
   }, []);
 
   useEffect(() => {
-    const url = new URLSearchParams(window.location.search);
-    const test = Array.from(colors).map((color) => color.slice(1));
-    url.set("colors", test.join("-"));
+    const url = new URLSearchParams();
+    Array.from(colors).map((color) => url.append("color", color.slice(1)));
     history.pushState(null, "", "?" + url.toString());
 
     if (Array.from(colors).length > 1) {
