@@ -4,6 +4,7 @@ import RatioSlider from "./components/ratio-slider";
 import { ColorCard } from "./components/color-card";
 import ColorBand from "./components/color-band";
 import { hex } from "wcag-contrast";
+import tinycolor from "tinycolor2";
 
 export default function ColorContrast() {
   const [colors, setColors] = useState(new Set<string>());
@@ -13,6 +14,26 @@ export default function ColorContrast() {
   >([]);
 
   useEffect(() => {
+    const colors = new URLSearchParams(window.location.search)
+      .get("colors")
+      ?.split("-");
+
+    colors?.map((color) => {
+      setColors(
+        (preVal) =>
+          new Set(
+            preVal.add(tinycolor(color).toHexString().toLocaleLowerCase())
+          )
+      );
+    });
+  }, []);
+
+  useEffect(() => {
+    const url = new URLSearchParams(window.location.search);
+    const test = Array.from(colors).map((color) => color.slice(1));
+    url.set("colors", test.join("-"));
+    history.pushState(null, "", "?" + url.toString());
+
     if (Array.from(colors).length > 1) {
       return setComparedColors(
         contrastCalculator(Array.from(colors), minRatio)
