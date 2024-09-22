@@ -20,7 +20,7 @@ export default function ColorInput({
       className="bg-white border border-gray-400 rounded-full shadow shadow-gray-500 max-w-[50vw] w-full mb-5 "
       onSubmit={(e) => handleFrom(e)}
     >
-      <div className="flex  rounded-full m-1 ml-3 	">
+      <div className="flex rounded-full m-1 ml-3 	">
         <input
           className="w-full mr-5"
           value={input}
@@ -30,7 +30,7 @@ export default function ColorInput({
           placeholder="hex/rgb"
         />
         <input
-          className="bg-green-500 px-3  py-1 rounded-full border-2 border-green-700"
+          className="bg-green-500 px-3 w-30 mr-2  py-1 rounded-full border-2 border-green-700"
           type="button"
           name="submit"
           value={"submit"}
@@ -38,6 +38,15 @@ export default function ColorInput({
             handleFrom();
           }}
         />
+        <a href="/">
+          <input
+            className="bg-sky-400 px-3 w-30 py-1 rounded-full border-2 border-green-700"
+            type="button"
+            name="submit"
+            value={"reset"}
+            onClick={() => {}}
+          />
+        </a>
       </div>
     </form>
   );
