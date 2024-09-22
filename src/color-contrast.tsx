@@ -3,31 +3,22 @@ import ColorInput from "./components/color-input";
 import RatioSlider from "./components/ratio-slider";
 import { ColorCard } from "./components/color-card";
 import ColorBand from "./components/color-band";
-import { hex } from "wcag-contrast";
-import tinycolor from "tinycolor2";
+import { contrastCalculator, getFirstColor, getFirstRatio } from "./utils";
 
 export default function ColorContrast() {
-  const [colors, setColors] = useState(new Set<string>());
-  const [minRatio, setMinRatio] = useState<number>(0);
+  const [colors, setColors] = useState(new Set<string>(getFirstColor()));
+  const [minRatio, setMinRatio] = useState<number>(getFirstRatio());
   const [comparedColors, setComparedColors] = useState<
     { color1: string; color2: string; contrast: number }[] | undefined
   >([]);
 
   useEffect(() => {
-    const colors = new URLSearchParams(window.location.search).getAll("color");
-    colors?.map((color) => {
-      setColors(
-        (preVal) =>
-          new Set(
-            preVal.add(tinycolor(color).toHexString().toLocaleLowerCase())
-          )
-      );
-    });
-  }, []);
-
-  useEffect(() => {
     const url = new URLSearchParams();
-    Array.from(colors).map((color) => url.append("color", color.slice(1)));
+    if (colors.size > 0) {
+      Array.from(colors).map((color) => url.append("color", color.slice(1)));
+    }
+
+    url.set("ratio", minRatio.toString());
     history.pushState(null, "", "?" + url.toString());
 
     if (Array.from(colors).length > 1) {
@@ -67,25 +58,4 @@ export default function ColorContrast() {
       </div>
     </>
   );
-}
-
-export function contrastCalculator(colors: string[], ratioSlider: number) {
-  const checkedColors: { color1: string; color2: string; contrast: number }[] =
-    [];
-
-  colors.forEach((color1) => {
-    colors.forEach((color2) => {
-      const contrast = hex(color1, color2);
-      if (color1 === color2 || contrast < ratioSlider) {
-        return;
-      }
-      checkedColors.push({
-        color1: color1,
-        color2: color2,
-        contrast: contrast,
-      });
-    });
-  });
-
-  return checkedColors;
 }

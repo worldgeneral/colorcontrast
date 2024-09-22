@@ -7,7 +7,6 @@ export default function RatioSlider({
   minRatio: number;
   setMinRatio: React.Dispatch<React.SetStateAction<number>>;
 }) {
-  console.log(minRatio);
   return (
     <div className="max-w-[66.66%] w-full my-10 ">
       <div className="relative   mx-3 ">
@@ -44,7 +43,10 @@ export default function RatioSlider({
           max="21"
           value={minRatio}
           step="0.01"
-          onChange={(ev) => setMinRatio(Number(ev.target.value))}
+          onChange={(ev) => {
+            setMinRatio(Number(ev.target.value));
+            console.log("onchange", minRatio);
+          }}
         />
         <div className=" py-5 box-border relative mx-3">
           <div
