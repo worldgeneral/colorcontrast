@@ -13,17 +13,8 @@ export function ColorCard(props: Props) {
     <div
       style={{ backgroundColor: props.color1, borderColor: props.color1 }}
       className=" w-72 flex flex-col m-1 rounded-lg border-4 overflow-hidden cursor-pointer relative"
-      onClick={() => {
-        navigator.clipboard.writeText(props.color1);
-      }}
     >
-      <CopyPopUp
-        text="Copied"
-        time={1000}
-        width={5}
-        height={2}
-        translate={"translate(120% , 1rem)"}
-      />
+      <CopyPopUp text="Copied" time={1000} color={props.color1} />
 
       <div className="flex justify-between">
         <div className="m-2">
@@ -35,20 +26,17 @@ export function ColorCard(props: Props) {
           </p>
         </div>
         <div className="m-2 flex flex-col">
-          <button
+          <div
             style={{
               borderColor: invert(props.color2, true),
               backgroundColor: props.color2,
               color: invert(props.color2, true),
             }}
             className="border border-black rounded-lg p-0.5 w-20 text-center my-auto relative z-20"
-            onClick={() => {
-              navigator.clipboard.writeText(props.color2);
-            }}
           >
             {props.color2}
-            <CopyPopUp text="Copied" time={1000} />
-          </button>
+            <CopyPopUp text="Copied" time={1000} color={props.color2} />
+          </div>
         </div>
       </div>
       <div className="flex  justify-center font-medium mb-1">
