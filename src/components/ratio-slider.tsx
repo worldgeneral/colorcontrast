@@ -12,21 +12,21 @@ export default function RatioSlider({
     <div className="max-w-[66.66%] w-full my-10 ">
       <div className="relative   mx-3 ">
         <button
-          className="absolute w-10 h-10 bg-black left-[calc(100%/(21/3))] -ml-5 rounded-br-full rounded-t-full -rotate-[45deg] text-white text-center  translate-y-4"
+          className="absolute w-10 h-10 bg-black left-[calc(100%/(21/3))] -ml-5 rounded-br-full rounded-t-full -rotate-[45deg] text-white text-center  -translate-y-2"
           onClick={() => setMinRatio(3)}
         >
           <p className="rotate-45 font-medium text-lg">3</p>
         </button>
 
         <button
-          className="absolute w-10 h-10 bg-black left-[calc(100%/(21/4.5))] -ml-5 rounded-br-full rounded-t-full -rotate-[45deg] text-white text-center  translate-y-4"
+          className="absolute w-10 h-10 bg-black left-[calc(100%/(21/4.5))] -ml-5 rounded-br-full rounded-t-full -rotate-[45deg] text-white text-center  -translate-y-2"
           onClick={() => setMinRatio(4.5)}
         >
           <p className="rotate-45 font-medium text-lg">4.5</p>
         </button>
 
         <button
-          className="absolute w-10 h-10 bg-black left-[calc(100%/(21/7))] -ml-5 rounded-br-full rounded-t-full -rotate-[45deg] text-white text-center translate-y-4"
+          className="absolute w-10 h-10 bg-black left-[calc(100%/(21/7))] -ml-5 rounded-br-full rounded-t-full -rotate-[45deg] text-white text-center -translate-y-2"
           onClick={() => setMinRatio(7)}
         >
           <p className="rotate-45 font-medium text-lg">7</p>
