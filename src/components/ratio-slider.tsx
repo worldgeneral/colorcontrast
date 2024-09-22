@@ -42,7 +42,6 @@ export default function RatioSlider({
           step="0.01"
           onChange={(ev) => {
             setMinRatio(Number(ev.target.value));
-            console.log("onchange", minRatio);
           }}
         />
         <div className=" py-5 box-border relative mx-3">
