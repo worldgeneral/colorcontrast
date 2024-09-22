@@ -8,7 +8,7 @@ type Props = {
 export default function ContrastCard(props: Props) {
   const grade = score(props.contrast);
   return (
-    <div className="w-1/3 aspect-video bg-white pl-2 text-lg">
+    <div className=" bg-white pl-2 text-lg">
       <div>{props.type}:</div>
       <span>
         {props.type === "Non"

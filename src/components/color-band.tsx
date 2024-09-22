@@ -13,10 +13,10 @@ export default function ColorBand({
   return (
     <div
       style={{ backgroundColor: color }}
-      className="w-28 h-8 m-1 rounded-md flex   items-center"
+      className="w-28 m-1 rounded-md flex items-center"
     >
       <button
-        className="px-1.5 h-full border-r border-black"
+        className="px-1.5 border-r border-black"
         onClick={() =>
           setColors((preVal) => {
             const next = new Set(preVal);
@@ -27,7 +27,7 @@ export default function ColorBand({
       >
         <svg
           fill={invertColor}
-          className="h-4 block mx-auto aspect-square "
+          className="w-4 block"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 448 512"
         >

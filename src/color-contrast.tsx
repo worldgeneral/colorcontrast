@@ -31,8 +31,8 @@ export default function ColorContrast() {
 
   return (
     <>
-      <div className="h-screen w-screen max-w-[1920px] mx-auto relative z-0 ">
-        <div className="bg-color-wheel bg-no-repeat bg-center w-screen h-screen fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[5] -z-10 opacity-20 blur-[0.3px]   "></div>
+      <div className="h-screen w-screen max-w-[1920px] mx-auto relative z-0">
+        <div className="bg-color-wheel bg-no-repeat bg-center w-screen h-screen fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[5] -z-10 opacity-20 blur-[0.3px]"></div>
 
         <div className="flex flex-col items-center z-20 mt-10">
           <ColorInput setColors={setColors} />
@@ -42,7 +42,7 @@ export default function ColorContrast() {
             ))}
           </div>
           <RatioSlider minRatio={minRatio} setMinRatio={setMinRatio} />
-          <div className="flex flex-wrap justify-evenly ">
+          <div className="flex flex-wrap justify-center ">
             {comparedColors
               ? comparedColors.map((color) => (
                   <ColorCard

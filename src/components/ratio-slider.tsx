@@ -8,33 +8,30 @@ export default function RatioSlider({
   setMinRatio: React.Dispatch<React.SetStateAction<number>>;
 }) {
   return (
-    <div className="max-w-[66.66%] w-full my-10 ">
+    <div className="max-w-[66.66%] w-full my-5">
       <div className="relative   mx-3 ">
         <button
-          className="absolute w-10 h-10 bg-black left-[calc(100%/(21/3))] -ml-5 rounded-br-full rounded-t-full -rotate-[45deg] text-white text-center  -translate-y-2"
+          className="absolute w-10 h-10 bg-green-700 left-[calc(100%/(21/3))] -ml-5 rounded-br-full rounded-t-full -rotate-[45deg] text-white text-center  -translate-y-2"
           onClick={() => setMinRatio(3)}
         >
           <p className="rotate-45 font-medium text-lg">3</p>
         </button>
 
         <button
-          className="absolute w-10 h-10 bg-black left-[calc(100%/(21/4.5))] -ml-5 rounded-br-full rounded-t-full -rotate-[45deg] text-white text-center  -translate-y-2"
+          className="absolute w-10 h-10 bg-green-700 left-[calc(100%/(21/4.5))] -ml-5 rounded-br-full rounded-t-full -rotate-[45deg] text-white text-center  -translate-y-2"
           onClick={() => setMinRatio(4.5)}
         >
           <p className="rotate-45 font-medium text-lg">4.5</p>
         </button>
 
         <button
-          className="absolute w-10 h-10 bg-black left-[calc(100%/(21/7))] -ml-5 rounded-br-full rounded-t-full -rotate-[45deg] text-white text-center -translate-y-2"
+          className="absolute w-10 h-10 bg-green-700 left-[calc(100%/(21/7))] -ml-5 rounded-br-full rounded-t-full -rotate-[45deg] text-white text-center -translate-y-2"
           onClick={() => setMinRatio(7)}
         >
           <p className="rotate-45 font-medium text-lg">7</p>
         </button>
       </div>
-      <div className="mt-10 ">
-        <label className="hidden" htmlFor="slider">
-          Minimum Ratio
-        </label>
+      <div className="mt-10">
         <input
           id="slider"
           type="range"
