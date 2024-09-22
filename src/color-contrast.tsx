@@ -19,7 +19,7 @@ export default function ColorContrast() {
     }
 
     url.set("ratio", minRatio.toString());
-    history.pushState(null, "", "?" + url.toString());
+    history.replaceState(null, "", "?" + url.toString());
 
     if (Array.from(colors).length > 1) {
       return setComparedColors(
